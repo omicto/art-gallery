@@ -1,0 +1,322 @@
+[
+    {
+        "transactionid": 100,
+        "dateacquired": "04\/11\/14",
+        "acquisitionprice": 30000,
+        "askingprice": 45000,
+        "datesold": "14\/12\/14",
+        "salesprice": 42500,
+        "customerid": 1000,
+        "workid": 500
+    },
+    {
+        "transactionid": 101,
+        "dateacquired": "07\/11\/14",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "datesold": "19\/12\/14",
+        "salesprice": 500,
+        "customerid": 1015,
+        "workid": 511
+    },
+    {
+        "transactionid": 102,
+        "dateacquired": "17\/11\/14",
+        "acquisitionprice": 125,
+        "askingprice": 250,
+        "datesold": "18\/01\/15",
+        "salesprice": 200,
+        "customerid": 1001,
+        "workid": 521
+    },
+    {
+        "transactionid": 103,
+        "dateacquired": "17\/11\/14",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "datesold": "12\/12\/15",
+        "salesprice": 400,
+        "customerid": 1034,
+        "workid": 522
+    },
+    {
+        "transactionid": 104,
+        "dateacquired": "17\/11\/14",
+        "acquisitionprice": 250,
+        "askingprice": 250,
+        "datesold": "18\/01\/15",
+        "salesprice": 200,
+        "customerid": 1001,
+        "workid": 523
+    },
+    {
+        "transactionid": 105,
+        "dateacquired": "17\/11\/14",
+        "acquisitionprice": 200,
+        "askingprice": 500,
+        "datesold": "12\/12\/15",
+        "salesprice": 400,
+        "customerid": 1034,
+        "workid": 524
+    },
+    {
+        "transactionid": 115,
+        "dateacquired": "03\/03\/15",
+        "acquisitionprice": 1500,
+        "askingprice": 3000,
+        "datesold": "07\/06\/15",
+        "salesprice": 2750,
+        "customerid": 1033,
+        "workid": 537
+    },
+    {
+        "transactionid": 121,
+        "dateacquired": "21\/09\/15",
+        "acquisitionprice": 15000,
+        "askingprice": 30000,
+        "datesold": "28\/11\/15",
+        "salesprice": 27500,
+        "customerid": 1015,
+        "workid": 548
+    },
+    {
+        "transactionid": 125,
+        "dateacquired": "21\/11\/15",
+        "acquisitionprice": 125,
+        "askingprice": 250,
+        "datesold": "18\/12\/15",
+        "salesprice": 200,
+        "customerid": 1001,
+        "workid": 551
+    },
+    {
+        "transactionid": 126,
+        "dateacquired": "21\/11\/15",
+        "acquisitionprice": 200,
+        "askingprice": 400,
+        "workid": 552
+    },
+    {
+        "transactionid": 127,
+        "dateacquired": "21\/11\/15",
+        "acquisitionprice": 125,
+        "askingprice": 500,
+        "datesold": "22\/12\/15",
+        "salesprice": 400,
+        "customerid": 1034,
+        "workid": 553
+    },
+    {
+        "transactionid": 128,
+        "dateacquired": "21\/11\/15",
+        "acquisitionprice": 125,
+        "askingprice": 250,
+        "datesold": "16\/03\/16",
+        "salesprice": 225,
+        "customerid": 1036,
+        "workid": 554
+    },
+    {
+        "transactionid": 129,
+        "dateacquired": "21\/11\/15",
+        "acquisitionprice": 125,
+        "askingprice": 250,
+        "datesold": "16\/03\/16",
+        "salesprice": 225,
+        "customerid": 1036,
+        "workid": 555
+    },
+    {
+        "transactionid": 151,
+        "dateacquired": "07\/05\/16",
+        "acquisitionprice": 10000,
+        "askingprice": 20000,
+        "datesold": "28\/06\/16",
+        "salesprice": 17500,
+        "customerid": 1036,
+        "workid": 561
+    },
+    {
+        "transactionid": 152,
+        "dateacquired": "18\/05\/16",
+        "acquisitionprice": 125,
+        "askingprice": 250,
+        "datesold": "15\/08\/16",
+        "salesprice": 225,
+        "customerid": 1001,
+        "workid": 562
+    },
+    {
+        "transactionid": 153,
+        "dateacquired": "18\/05\/16",
+        "acquisitionprice": 200,
+        "askingprice": 400,
+        "datesold": "15\/08\/16",
+        "salesprice": 350,
+        "customerid": 1001,
+        "workid": 563
+    },
+    {
+        "transactionid": 154,
+        "dateacquired": "18\/05\/16",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "datesold": "28\/09\/16",
+        "salesprice": 400,
+        "customerid": 1040,
+        "workid": 564
+    },
+    {
+        "transactionid": 155,
+        "dateacquired": "18\/05\/16",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "workid": 565
+    },
+    {
+        "transactionid": 156,
+        "dateacquired": "18\/05\/16",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "datesold": "27\/09\/16",
+        "salesprice": 400,
+        "customerid": 1040,
+        "workid": 566
+    },
+    {
+        "transactionid": 161,
+        "dateacquired": "28\/06\/16",
+        "acquisitionprice": 7500,
+        "askingprice": 15000,
+        "datesold": "29\/09\/16",
+        "salesprice": 13750,
+        "customerid": 1033,
+        "workid": 570
+    },
+    {
+        "transactionid": 171,
+        "dateacquired": "23\/08\/16",
+        "acquisitionprice": 35000,
+        "askingprice": 60000,
+        "datesold": "29\/09\/16",
+        "salesprice": 55000,
+        "customerid": 1000,
+        "workid": 571
+    },
+    {
+        "transactionid": 175,
+        "dateacquired": "29\/09\/16",
+        "acquisitionprice": 40000,
+        "askingprice": 75000,
+        "datesold": "18\/12\/16",
+        "salesprice": 72500,
+        "customerid": 1036,
+        "workid": 500
+    },
+    {
+        "transactionid": 181,
+        "dateacquired": "11\/10\/16",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "workid": 578
+    },
+    {
+        "transactionid": 201,
+        "dateacquired": "28\/02\/17",
+        "acquisitionprice": 2000,
+        "askingprice": 3500,
+        "datesold": "26\/04\/17",
+        "salesprice": 3250,
+        "customerid": 1040,
+        "workid": 580
+    },
+    {
+        "transactionid": 202,
+        "dateacquired": "28\/02\/17",
+        "acquisitionprice": 2000,
+        "askingprice": 3500,
+        "datesold": "26\/04\/17",
+        "salesprice": 3250,
+        "customerid": 1040,
+        "workid": 581
+    },
+    {
+        "transactionid": 225,
+        "dateacquired": "08\/06\/17",
+        "acquisitionprice": 125,
+        "askingprice": 250,
+        "datesold": "27\/09\/17",
+        "salesprice": 225,
+        "customerid": 1051,
+        "workid": 585
+    },
+    {
+        "transactionid": 226,
+        "dateacquired": "08\/06\/17",
+        "acquisitionprice": 200,
+        "askingprice": 400,
+        "workid": 586
+    },
+    {
+        "transactionid": 227,
+        "dateacquired": "08\/06\/17",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "datesold": "27\/09\/17",
+        "salesprice": 475,
+        "customerid": 1051,
+        "workid": 587
+    },
+    {
+        "transactionid": 228,
+        "dateacquired": "08\/06\/17",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "workid": 588
+    },
+    {
+        "transactionid": 229,
+        "dateacquired": "08\/06\/17",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "workid": 589
+    },
+    {
+        "transactionid": 241,
+        "dateacquired": "29\/08\/17",
+        "acquisitionprice": 2500,
+        "askingprice": 5000,
+        "datesold": "27\/09\/17",
+        "salesprice": 4750,
+        "customerid": 1015,
+        "workid": 590
+    },
+    {
+        "transactionid": 251,
+        "dateacquired": "25\/10\/17",
+        "acquisitionprice": 25000,
+        "askingprice": 50000,
+        "workid": 593
+    },
+    {
+        "transactionid": 252,
+        "dateacquired": "27\/10\/17",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "workid": 594
+    },
+    {
+        "transactionid": 253,
+        "dateacquired": "27\/10\/17",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "workid": 595
+    },
+    {
+        "transactionid": 254,
+        "dateacquired": "27\/10\/17",
+        "acquisitionprice": 250,
+        "askingprice": 500,
+        "workid": 596
+    }
+]

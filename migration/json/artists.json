@@ -1,0 +1,74 @@
+[
+    {
+        "artistid": 1,
+        "lastname": "Miro                     ",
+        "firstname": "Joan                     ",
+        "nationality": "Spanish                       ",
+        "dateofbirth": 1893,
+        "datedeceased": 1983
+    },
+    {
+        "artistid": 2,
+        "lastname": "Kandinsky                ",
+        "firstname": "Wassily                  ",
+        "nationality": "Russian                       ",
+        "dateofbirth": 1866,
+        "datedeceased": 1944
+    },
+    {
+        "artistid": 3,
+        "lastname": "Klee                     ",
+        "firstname": "Paul                     ",
+        "nationality": "German                        ",
+        "dateofbirth": 1879,
+        "datedeceased": 1940
+    },
+    {
+        "artistid": 4,
+        "lastname": "Matisse                  ",
+        "firstname": "Henri                    ",
+        "nationality": "French                        ",
+        "dateofbirth": 1869,
+        "datedeceased": 1954
+    },
+    {
+        "artistid": 5,
+        "lastname": "Chagall                  ",
+        "firstname": "Marc                     ",
+        "nationality": "French                        ",
+        "dateofbirth": 1887,
+        "datedeceased": 1985
+    },
+    {
+        "artistid": 11,
+        "lastname": "Sargent                  ",
+        "firstname": "John Singer              ",
+        "nationality": "United States                 ",
+        "dateofbirth": 1856,
+        "datedeceased": 1925
+    },
+    {
+        "artistid": 17,
+        "lastname": "Tobey                    ",
+        "firstname": "Mark                     ",
+        "nationality": "United States                 ",
+        "dateofbirth": 1890,
+        "datedeceased": 1976
+    },
+    {
+        "artistid": 18,
+        "lastname": "Horiuchi                 ",
+        "firstname": "Paul                     ",
+        "nationality": "United States                 ",
+        "dateofbirth": 1906,
+        "datedeceased": 1999
+    },
+    {
+        "artistid": 19,
+        "lastname": "Graves                   ",
+        "firstname": "Morris                   ",
+        "nationality": "United States                 ",
+        "dateofbirth": 1920,
+        "datedeceased": 2001
+    }
+]
