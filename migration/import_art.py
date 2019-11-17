@@ -56,6 +56,7 @@ def main():
     for doc in ["artists", "transactions", "customers"]:
         insert_json(paths[doc], doc, "art_gallery")
     embed_works()
+    print("uwu")
 
 
 if __name__ == "__main__":
