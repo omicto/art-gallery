@@ -31,9 +31,9 @@ logger.level = 'debug';
 
 /**
  * MongoDB Connection
- */
+ */ 
 
-const uri = `mongodb://${config.get('db.url')}:27017/video-app`;
+const uri = `mongodb://${config.get('db.url')}:27017/art_gallery`;
 mongoose.connect(uri);
 
 const db = mongoose.connection;

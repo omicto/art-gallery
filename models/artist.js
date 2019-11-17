@@ -53,14 +53,6 @@ class Artist {
         this.firstname = i;
     }
 
-    get nationality(){
-        return this.nationality;
-    }
-
-    set nationality(i){
-        this.nationality = i;
-    }
-
     get dateOfBirth(){
         return this.dateofbirth;
     }
@@ -74,14 +66,6 @@ class Artist {
 
     set dateDeceased(i){
         this.datedeceased = i;
-    }
-
-    get works(){
-        return this.works;
-    }
-
-    set works(i){
-        this.works = i;
     }
 
     addWork(work){

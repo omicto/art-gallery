@@ -25,7 +25,7 @@ class Transaction {
         this.workid = workid;
     }
 
-    getLargestTransactionId(){
+    static getLargestTransactionId(){
         let largest = this.find().sort({transactionid:-1}).limit(1);
         return largest.transactionId;
     }

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "migrate": "python ./migration/import_art.py",
+    "dev": "supervisor ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {

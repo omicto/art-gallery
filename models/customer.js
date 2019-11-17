@@ -67,35 +67,11 @@ class Customer {
     get encryptedPassword() {
         return encryptedpassword;
     }
-    set street(v) {
-        this.street = v;
-    }
-    get street() {
-        return street;
-    }
-    set city(v) {
-        this.city = v;
-    }
-    get city() {
-        return city;
-    }
-    set state(v) {
-        this.state = v;
-    }
-    get state() {
-        return state;
-    }
     set zipOrPostalCode(v) {
         this.ziporpostalcode = v;
     }
     get zipOrPostalCode() {
         return ziporpostalcode;
-    }
-    set country(v) {
-        this.country = v;
-    }
-    get country() {
-        return country;
     }
     set areaCode(v) {
         this.areacode = v;
