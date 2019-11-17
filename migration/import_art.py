@@ -1,8 +1,9 @@
 from pymongo import MongoClient
 import json
+from pathlib import Path
 
 
-path = "./json/"
+path = str(Path(__file__).parent.absolute()) + "/json/"
 paths = {
     "artists": path + "artists.json",
     "customers": path + "customers.json",
@@ -51,6 +52,7 @@ def embed_works():
 
 def main():
     client = MongoClient('localhost', 27017)
+    client.drop_database("art_gallery")
     for doc in ["artists", "transactions", "customers"]:
         insert_json(paths[doc], doc, "art_gallery")
     embed_works()

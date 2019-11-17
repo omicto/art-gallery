@@ -8,6 +8,10 @@ var app = require('../app');
 var debug = require('debug')('art-gallery:server');
 var http = require('http');
 
+const mongoose = require('mongoose');
+const config = require('config');
+const log4js = require('log4js');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -21,11 +25,33 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+
+const logger = log4js.getLogger();
+logger.level = 'debug';
+
+/**
+ * MongoDB Connection
+ */
+
+const uri = `mongodb://${config.get('db.url')}:27017/video-app`;
+mongoose.connect(uri);
+
+const db = mongoose.connection;
+
+db.on('error', () => {
+  logger.error("Couldn't connect to DB");
+});
+
+db.on('open', () => {
+  server.listen(port, () => {
+    logger.info('Successfully connected to DB');
+  });
+});
+
+
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
