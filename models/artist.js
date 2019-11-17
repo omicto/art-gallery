@@ -68,6 +68,10 @@ class Artist {
         this.datedeceased = i;
     }
 
+    get fullName(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+
     addWork(work){
         this.findOneAndUpdate({artistid: this.artistId}, {'$push' : {"works" : work}});
     }

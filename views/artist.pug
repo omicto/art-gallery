@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1=artist.fullName
+  ul
+    li Nationality: #{artist.nationality}
+    li Year of Birth: #{artist.dateOfBirth}
+    li Year of Death: #{artist.dateDeceased}
+    li works
+      ul
+        each work in artist.works
+          li Title: #{work.title}
+            ul
+              li Copy number: #{work.copy}
+              li Medium: #{work.medium}

@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Art Gallery
+  p Choose an action
+  ul
+    li: a(href="/artist") See Artist information
+    li: a(href="/customer") See Customer information
+    li: a(href="/sales") See Sales

@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  ul
+    each artist in artists
+      - var id = artist.artistid
+      a(href='/artist/'+id): li= artist.firstName + ' ' + artist.lastName
