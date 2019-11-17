@@ -19,7 +19,7 @@ const artistSchema = new Schema({
 
 class Artist {
     constructor(artistid, lastname, firstname, nationality, dateofbirth, datedeceased, works){
-        this.artistid = artistid;
+        this.artistid = this.getLargestArtistId() + 1;
         this.lastname = lastname;
         this.firstname = firstname;
         this.nationality = nationality;
@@ -32,8 +32,9 @@ class Artist {
         return this.artistid;
     }
 
-    set artistId(i){
-        this.artistid = i;
+    static getLargestArtistId(){
+        let largest = this.find().sort({artistid:-1}).limit(1);
+        return largest.artistid;
     }
 
     get lastName(){

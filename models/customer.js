@@ -17,70 +17,96 @@ const customerSchema = {
 }
 
 class Customer {
-    set lastName(v){
+
+    constructor(firstname, lastname, emailaddress, encryptedpassword,
+        street, city, state, ziporpostalcode, country, areacode, phonenumber) {
+        this.customerid = this.getLargestCustomerId() + 1;
+        this.lastname = lastname;
+        this.firstname = firstname;
+        this.emailaddress = emailaddress;
+        this.encryptedpassword = encryptedpassword;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.ziporpostalcode = ziporpostalcode;
+        this.country = country;
+        this.areacode = areacode;
+        this.phonenumber = phonenumber;
+    }
+
+    static getLargestCustomerId(){
+        let largest = this.find().sort({customerid:-1}).limit(1);
+        return largest.customerid;
+    }
+
+    get customerId() {
+        return this.customerid;
+    }
+
+    set lastName(v) {
         this.lastname = v;
     }
-    get lastName(){
+    get lastName() {
         return lastname;
     }
-    set firstName(v){
+    set firstName(v) {
         this.firstname = v;
     }
-    get firstName(){
+    get firstName() {
         return firstname;
     }
-    set emailAddress(v){
+    set emailAddress(v) {
         this.emailaddress = v;
     }
-    get emailAddress(){
+    get emailAddress() {
         return emailaddress;
     }
-    set encryptedPassword(v){
+    set encryptedPassword(v) {
         this.encryptedpassword = v;
     }
-    get encryptedPassword(){
+    get encryptedPassword() {
         return encryptedpassword;
     }
-    set street(v){
+    set street(v) {
         this.street = v;
     }
-    get street(){
+    get street() {
         return street;
     }
-    set city(v){
+    set city(v) {
         this.city = v;
     }
-    get city(){
+    get city() {
         return city;
     }
-    set state(v){
+    set state(v) {
         this.state = v;
     }
-    get state(){
+    get state() {
         return state;
     }
-    set zipOrPostalCode(v){
+    set zipOrPostalCode(v) {
         this.ziporpostalcode = v;
     }
-    get zipOrPostalCode(){
+    get zipOrPostalCode() {
         return ziporpostalcode;
     }
-    set country(v){
+    set country(v) {
         this.country = v;
     }
-    get country(){
+    get country() {
         return country;
     }
-    set areaCode(v){
+    set areaCode(v) {
         this.areacode = v;
     }
-    get areaCode(){
+    get areaCode() {
         return areacode;
     }
-    set phoneNumber(v){
+    set phoneNumber(v) {
         this.phonenumber = v;
     }
-    get phoneNumber(){
+    get phoneNumber() {
         return phonenumber;
     }
 }
