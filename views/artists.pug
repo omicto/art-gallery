@@ -1,7 +1,38 @@
 extends layout
 
 block content
-  ul
+  h1 Artists
+  a(href='/artist/new'): h4 + Add a new artist 
+  table(id='table')
+    thead
+      th Name
+      th Nationality
+      th Year of Birth
+      th Year of Death
+      th Options
     each artist in artists
       - var id = artist.artistid
-      a(href='/artist/'+id): li= artist.firstName + ' ' + artist.lastName
+      tr 
+        td: a(href='/artist/'+id): = artist.firstName + ' ' + artist.lastName
+        td #{artist.nationality}
+        td #{artist.dateOfBirth}
+        td #{artist.dateDeceased}
+        td
+          span(title='Edit' onclick=`edit(${id})`): a(href='#') ✏
+          span(title='Delete' onclick=`deleteArtist(${id})`): a(href='#') ❌ 
+  
+  script.
+    $(document).ready( function () {
+      $('#table').DataTable();
+    });
+
+ 
+    
+    function deleteArtist(id){
+      $.ajax({
+        url: "/api/artist/" + id,
+        method: 'DELETE'
+      }).fail(function () {
+        $('body').prepend('Eliminado');
+      });
+    }

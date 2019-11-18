@@ -12,6 +12,23 @@ function one(req, res, next) {
     }));
 }
 
+function destroy(req, res, next){
+    let artistid = req.params.id;
+    Artist.remove({artistid: artistid}).then((actor) => res.json(actor));
+}
+
+function create(req, res, next){
+    let artist = new Artist({
+        lastname: req.body.lastname,
+        firstname: req.body.firstname,
+        nationality: req.body.nationality,
+        dateofbirth: req.body.dateofbirth,
+        datedeceased: req.body.datedeceased
+    });
+    artist.save().then(a => res.json(a));
+}
+
+
 module.exports = {
-    index, one
+    index, one, destroy, create
 };

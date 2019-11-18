@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 const Schema = mongoose.Schema;
+const log4js = require('log4js');
+const logger = log4js.getLogger();
 
 const artistSchema = new Schema({
-    artistid: Number,
     lastname: String,
     firstname: String,
     nationality: String,
@@ -17,24 +19,19 @@ const artistSchema = new Schema({
     }]
 });
 
+artistSchema.plugin(AutoIncrement, {inc_field: 'artistid', start_seq: 200});
+
 class Artist {
-    constructor(artistid, lastname, firstname, nationality, dateofbirth, datedeceased, works){
-        this.artistid = this.getLargestArtistId() + 1;
+    constructor( lastname, firstname, nationality, dateofbirth, datedeceased, works){
         this.lastname = lastname;
         this.firstname = firstname;
         this.nationality = nationality;
         this.dateofbirth = dateofbirth;
         this.datedeceased = datedeceased;
-        this.works = works;
     }
 
     get artistId(){
         return this.artistid;
-    }
-
-    static getLargestArtistId(){
-        let largest = this.find().sort({artistid:-1}).limit(1);
-        return largest.artistid;
     }
 
     get lastName(){

@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
+
 const Schema = mongoose.Schema;
 
 const transactionSchema = Schema({
-    transactionid: Number,
     dateacquired: String,
     acquisitionprice: Number,
     askingprice: Number,
@@ -12,10 +13,11 @@ const transactionSchema = Schema({
     workid: Number
 });
 
+transactionSchema.plugin(AutoIncrement, {inc_field: 'transactionid', start_req: 200});
+
 class Transaction {
 
     constructor(dateacquired, acquisitionprice, askingprice, datesold, salesprice, customerid, workid) {
-        this.transactionid = this.getLargestTransactionId() + 1;
         this.dateacquired = dateacquired;
         this.acquisitionprice = acquisitionprice;
         this.askingprice = askingprice;
@@ -23,11 +25,6 @@ class Transaction {
         this.salesprice = salesprice;
         this.customerid = customerid;
         this.workid = workid;
-    }
-
-    static getLargestTransactionId(){
-        let largest = this.find().sort({transactionid:-1}).limit(1);
-        return largest.transactionId;
     }
 
     get transactionId() {

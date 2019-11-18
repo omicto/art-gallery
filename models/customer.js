@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 const Schema = mongoose.Schema;
 
 const customerSchema = {
-    customerid: Number,
     lastname: String,
     firstname: String,
     emailaddress: String,
@@ -16,11 +16,13 @@ const customerSchema = {
     phonenumber: String,
 }
 
+customerSchema.plugin(AutoIncrement, {inc_field: 'customerid', start_req: 1000});
+
+
 class Customer {
 
     constructor(firstname, lastname, emailaddress, encryptedpassword,
         street, city, state, ziporpostalcode, country, areacode, phonenumber) {
-        this.customerid = this.getLargestCustomerId() + 1;
         this.lastname = lastname;
         this.firstname = firstname;
         this.emailaddress = emailaddress;
@@ -34,10 +36,6 @@ class Customer {
         this.phonenumber = phonenumber;
     }
 
-    static getLargestCustomerId(){
-        let largest = this.find().sort({customerid:-1}).limit(1);
-        return largest.customerid;
-    }
 
     get customerId() {
         return this.customerid;
