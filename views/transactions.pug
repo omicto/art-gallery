@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  h1=title
+  a(href='/transaction/new'): h4 + Register a new sale
+  table(id='table')
+    thead
+      th Date Acquired
+      th Acquisition Price
+      th Asking Price
+      th Date Sold
+      th Sales price
+      th customerid
+      th workid
+    each trans in transactions
+      - var id = trans.transactionid
+      tr 
+        td #{trans.dateacquired}
+        td #{trans.acquisitionprice}
+        td #{trans.askingprice}
+        td #{trans.datesold}
+        td #{trans.salesprice}
+        td #{trans.customerid}
+        td #{trans.workid}
+        td
+          span(title='Edit' onclick=`edit(${id})`): a(href='#') ✏
+          span(title='Delete' onclick=`deleteArtist(${id})`): a(href='#') ❌ 
+  
+  script.
+    $(document).ready( function () {
+      $('#table').DataTable();
+    });
+

@@ -19,7 +19,9 @@ const artistSchema = new Schema({
     }]
 });
 
-artistSchema.plugin(AutoIncrement, {inc_field: 'artistid', start_seq: 200});
+artistSchema.plugin(AutoIncrement, {inc_field: 'artistid', start_seq: 25});
+artistSchema.plugin(AutoIncrement, {id: 'workId',inc_field: 'works.workid', start_seq: 1000});
+
 
 class Artist {
     constructor( lastname, firstname, nationality, dateofbirth, datedeceased, works){
@@ -70,7 +72,7 @@ class Artist {
     }
 
     addWork(work){
-        this.findOneAndUpdate({artistid: this.artistId}, {'$push' : {"works" : work}});
+        return this.findOneAndUpdate({artistid: this.artistId}, {'$push' : {"works" : work}});
     }
 }
 

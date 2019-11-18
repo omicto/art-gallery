@@ -36,7 +36,6 @@ class Customer {
         this.phonenumber = phonenumber;
     }
 
-
     get customerId() {
         return this.customerid;
     }

@@ -12,12 +12,12 @@ function one(req, res, next) {
     }));
 }
 
-function destroy(req, res, next){
+function destroy(req, res, next) {
     let artistid = req.params.id;
-    Artist.remove({artistid: artistid}).then((actor) => res.json(actor));
+    Artist.remove({ artistid: artistid }).then((actor) => res.json(actor));
 }
 
-function create(req, res, next){
+function create(req, res, next) {
     let artist = new Artist({
         lastname: req.body.lastname,
         firstname: req.body.firstname,
@@ -28,7 +28,31 @@ function create(req, res, next){
     artist.save().then(a => res.json(a));
 }
 
+function update(req, res, next) {
+    let artistid = req.params.id;
+    Artist.findOne({ artistid: artistid }).then((artist) => {
+        artist.lastName = req.body.lastname ? req.body.lastname : artist.lastName;
+        artist.firstName = req.body.firstname ? req.body.firstname : artist.firstName;
+        artist.nationality = req.body.nationality ? req.body.nationality : artist.nationality;
+        artist.dateOfBirth = req.body.dateofbirth ? req.body.dateofbirth : artist.dateOfBirth;
+        artist.dateDeceased = req.body.datedeceased ? req.body.datedeceased : artist.dateDeceased;
+        artist.save().then((a) => res.json(a));
+    });
+}
+
+function addWork(req, res, next) {
+    let artistid = req.params.id;
+    Artist.findOne({ artistid: artistid }).then((artist) => {
+        artist.addWork({
+            title: req.body.title,
+            copy: req.body.copy,
+            medium: req.body.medium,
+            description: req.body.description
+        }).then((artist) => res.json(artist));
+    });
+}
+
 
 module.exports = {
-    index, one, destroy, create
+    index, one, destroy, create, update, addWork
 };
