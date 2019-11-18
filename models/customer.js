@@ -21,7 +21,7 @@ customerSchema.plugin(AutoIncrement, {inc_field: 'customerid', start_req: 1000})
 
 class Customer {
 
-    constructor(firstname, lastname, emailaddress, encryptedpassword,
+    constructor(firstname, lastname, emailaddress, 
         street, city, state, ziporpostalcode, country, areacode, phonenumber) {
         this.lastname = lastname;
         this.firstname = firstname;

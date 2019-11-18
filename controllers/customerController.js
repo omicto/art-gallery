@@ -9,12 +9,16 @@ function renderOne(req, res, next) {
     Customer.findOne({ customerid: customerId }).then(c => res.render('customer', { newCustomer: false, customer: c }));
 }
 
+function renderEditForm(req, res, next){
+    let customerId = req.params.id;
+    Customer.findOne({ customerid: customerId }).then(c => res.render('customer-form', { newCustomer: false, customer: c }));
+}
+
 function create(req, res, next) {
     let customer = new Customer({
         lastname: req.body.lastname,
         firstname: req.body.firstname,
         emailaddress: req.body.emailaddress,
-        encryptedpassword: req.body.encryptedpassword,
         street: req.body.street,
         city: req.body.city,
         state: req.body.state,
@@ -32,7 +36,6 @@ function update(req, res, next) {
         cust.lastName = req.body.lastname ? req.body.lastname : cust.lastName;
         cust.firstName = req.body.firstname ? req.body.firstname : cust.firstName;
         cust.emailAddress = req.body.emailaddress ? req.body.emailaddress : cust.emailAddress;
-        cust.encryptedPassword = req.body.encryptedpassword ? req.body.encryptedpassword : cust.encryptedPassword;
         cust.street = req.body.street ? req.body.street : cust.street;
         cust.city = req.body.city ? req.body.city : cust.city;
         cust.state = req.body.state ? req.body.state : cust.state;
@@ -50,4 +53,4 @@ function destroy(req, res, next) {
     Customer.remove({ customerid: customerid }).then(c => res.json(c));
 }
 
-module.exports = {index, renderOne, create, update, destroy};
+module.exports = {index, renderOne, create, update, destroy, renderEditForm};

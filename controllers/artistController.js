@@ -43,7 +43,7 @@ function update(req, res, next) {
 function addWork(req, res, next) {
     let artistid = req.params.id;
     Artist.findOne({ artistid: artistid }).then((artist) => {
-        artist.addWork({
+        artist.works.push({
             title: req.body.title,
             copy: req.body.copy,
             medium: req.body.medium,
@@ -53,6 +53,13 @@ function addWork(req, res, next) {
 }
 
 
+function getWork(req, res, next){
+    let workId = req.params.id;
+    Artist.findOne({'works.workid': workId}, {'works.$': 1})
+    .then(a => res.json({workinfo: a.works[0]}))
+    .catch((err) => res.status(404).json('Not found'));
+}
+
 module.exports = {
-    index, one, destroy, create, update, addWork
+    index, one, destroy, create, update, addWork, getWork
 };

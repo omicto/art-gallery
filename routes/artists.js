@@ -4,6 +4,7 @@ const controller = require('../controllers/artistController');
 
 router
 .delete('/:id', controller.destroy)
-.post('/', controller.create);
+.post('/', controller.create)
+.get('/work/:id', controller.getWork);
 
 module.exports = router;

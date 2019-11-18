@@ -1,8 +1,14 @@
 const Transaction = require('../models/transaction');
+const Artist = require('../models/artist');
+
 
 function index(req, res, next) {
     Transaction.find().then(transactions => {
-        
+        transactions.forEach(t => {
+            Artist.findOne({ 'works.workid': workId }, { 'works.$': 1 })
+                .then(a => res.json({ workinfo: a.works[0] }))
+                .catch((err) => res.status(404).json('Not found'));
+        });
         res.render('transactions', { title: 'Sales', transactions: transactions });
     });
 }

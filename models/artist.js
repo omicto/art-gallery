@@ -4,19 +4,22 @@ const Schema = mongoose.Schema;
 const log4js = require('log4js');
 const logger = log4js.getLogger();
 
+const workSchema = new Schema({
+    workid: Number,
+    title: String,
+    copy: String,
+    medium: String,
+    description: String
+});
+
+
 const artistSchema = new Schema({
     lastname: String,
     firstname: String,
     nationality: String,
     dateofbirth: Number,
     datedeceased: Number,
-    works: [{
-        workid: Number,
-        title: String,
-        copy: String,
-        medium: String,
-        description: String
-    }]
+    works: [workSchema]
 });
 
 artistSchema.plugin(AutoIncrement, {inc_field: 'artistid', start_seq: 25});
@@ -71,9 +74,6 @@ class Artist {
         return `${this.firstName} ${this.lastName}`;
     }
 
-    addWork(work){
-        return this.findOneAndUpdate({artistid: this.artistId}, {'$push' : {"works" : work}});
-    }
 }
 
 artistSchema.loadClass(Artist);
