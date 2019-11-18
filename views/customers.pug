@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1 Customers
+  a(href='/custoemr/new'): h4 + New Customer
+  table(id='table')
+    thead
+      th First Name
+      th Last Name
+      th Email Address
+      th Street
+      th City
+      th State
+      th ZIP Code
+      th Country
+      th Area Code
+      th Phone Number
+    each customer in customers
+      - var id = customer.customerid
+      tr
+        td #{customer.firstname}
+        td #{customer.lastname}
+        td #{customer.emailaddress}
+        td #{customer.street}
+        td #{customer.city}
+        td #{customer.state}
+        td #{customer.ziporpostalcode}
+        td #{customer.country}
+        td #{customer.areacode}
+        td #{customer.phonenumber}
+
+  script.
+    $(document).ready( function () {
+      $('#table').DataTable();
+    });
+

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 const Schema = mongoose.Schema;
 
-const customerSchema = {
+const customerSchema = new Schema({
     lastname: String,
     firstname: String,
     emailaddress: String,
@@ -14,7 +14,7 @@ const customerSchema = {
     country: String,
     areacode: String,
     phonenumber: String,
-}
+});
 
 customerSchema.plugin(AutoIncrement, {inc_field: 'customerid', start_req: 1000});
 

@@ -49,3 +49,5 @@ function destroy(req, res, next) {
     let customerid = req.params.id;
     Customer.remove({ customerid: customerid }).then(c => res.json(c));
 }
+
+module.exports = {index, renderOne, create, update, destroy};
