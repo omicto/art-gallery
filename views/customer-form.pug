@@ -4,27 +4,27 @@ block content
   h1=(newCustomer? "Add" : "Edit") + " customer"
 
   - var customerInfo = !!(customer)? customer: {}
-  form(id='customer-form')
+  form(id='customer-form' class='form-group')
     label(for="firstname") First Name
-    input(type="text" name="firstname", value=customerInfo.firstname)
+    input(type="text" name="firstname" class='form-control', value=customerInfo.firstname)
     label(for="lastname") Last Name
-    input(type="text" name="lastname", value=customerInfo.lastname)
+    input(type="text" name="lastname" class='form-control', value=customerInfo.lastname)
     label(for="emailaddress") Email Address
-    input(type="text" name="emailaddress", value=customerInfo.emailaddress)
+    input(type="text" name="emailaddress" class='form-control', value=customerInfo.emailaddress)
     label(for="street") Street
-    input(type="text" name="street", value=customerInfo.street)
+    input(type="text" name="street" class='form-control', value=customerInfo.street)
     label(for="city") City
-    input(type="text" name="city", value=customerInfo.city)
+    input(type="text" name="city" class='form-control', value=customerInfo.city)
     label(for="state") State
-    input(type="text" name="state", value=customerInfo.state)
+    input(type="text" name="state" class='form-control', value=customerInfo.state)
     label(for="ziporpostalcode") Zip Or Postal Code
-    input(type="text" name="ziporpostalcode", value=customerInfo.ziporpostalcode)
+    input(type="text" name="ziporpostalcode" class='form-control', value=customerInfo.ziporpostalcode)
     label(for="country") Country
-    input(type="text" name="country", value=customerInfo.country)
+    input(type="text" name="country" class='form-control', value=customerInfo.country)
     label(for="areacode") Areacode
-    input(type="text" name="areacode", value=customerInfo.areacode)
+    input(type="text" name="areacode" class='form-control', value=customerInfo.areacode)
     label(for="phonenumber") Phone Number
-    input(type="text" name="phonenumber", value=customerInfo.phonenumber)
+    input(type="text" name="phonenumber" class='form-control', value=customerInfo.phonenumber)
     button(type="submit") Submit
 
   - let url = newCustomer? '/api/customer/' : ('/api/customer/' + customerInfo.customerid);

@@ -12,6 +12,11 @@ function one(req, res, next) {
     }));
 }
 
+function renderForm(req, res, next){
+    let artistId = req.params.id;
+    Artist.findOne({ artistid: artistId }).then(a => res.render('artist-form', { newArtist: false, artist: a }));
+}
+
 function destroy(req, res, next) {
     let artistid = req.params.id;
     Artist.remove({ artistid: artistid }).then((actor) => res.json(actor));
@@ -61,5 +66,5 @@ function getWork(req, res, next){
 }
 
 module.exports = {
-    index, one, destroy, create, update, addWork, getWork
+    index, one, destroy, create, update, addWork, getWork, renderForm
 };

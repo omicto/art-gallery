@@ -10,3 +10,7 @@ a {
 th,tr {
   text-align: center;
 }
+
+img {
+  height: 35rem;
+}

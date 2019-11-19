@@ -1,16 +1,11 @@
 extends layout
 
 block content
-  h1=artist.fullName
+  h1=artist.fullName + ' | Works'
   ul
-    li Nationality: #{artist.nationality}
-    li Year of Birth: #{artist.dateOfBirth}
-    li Year of Death: #{artist.dateDeceased}
-    li Works
-      ul
-        each work in artist.works
-          li 
-            b #{work.title}
-            ul
-              li Copy number: #{work.copy}
-              li Medium: #{work.medium}
+    each work in artist.works
+      li 
+        b #{work.title}
+        ul
+          li Copy number: #{work.copy}
+          li Medium: #{work.medium}

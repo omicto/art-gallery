@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1=(newArtist? "Add" : "Edit") + " artist"
+  -var artistInfo = artist ? artist : {}
+  form(id="artist-form" class="form-group")
+    label(for="firstname") First Name
+    input(type="text" name="firstname" value=artistInfo.firstname class="form-control")
+    label(for="lastname") Last Name
+    input(type="text" name="lastname" value=artistInfo.lastname class="form-control")
+    label(for="nationality") Nationality
+    input(type="text" name="nationality" value=artistInfo.nationality class="form-control")
+    label(for="dateofbirth") Date of Birth
+    input(type="number" name="dateofbirth" value=artistInfo.dateofbirth class="form-control")
+    label(for="datedeceased") Date Deceased
+    input(type="number" name="datedeceased" value=artistInfo.datedeceased class="form-control")
+    button(type="submit") Submit
+
+  - let url = '/api/artist/' + (newArtist ?  '' : artistInfo.artist);
+  - let type = newArtist? 'post' : 'put';
+  script.
+    $('#artist-form').on('submit', function(e){
+      e.preventDefault();
+      let form = $(this);
+
+      $.ajax({
+        type: '#{type}',
+        url: '#{url}',
+        data: form.serialize()
+      });
+    });

@@ -18,7 +18,7 @@ block content
         td #{artist.dateOfBirth}
         td #{artist.dateDeceased}
         td
-          span(title='Edit' onclick=`edit(${id})`): a(href='#') ✏
+          span(title='Edit'): a(href=`/artist/form/${id}`) ✏
           span(title='Delete' onclick=`deleteArtist(${id})`): a(href='#') ❌ 
   
   script.
