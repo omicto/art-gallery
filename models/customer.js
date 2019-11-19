@@ -82,6 +82,9 @@ class Customer {
     get phoneNumber() {
         return phonenumber;
     }
+    get fullName(){
+        return `${this.firstName} ${this.lastName}`;
+    }
 }
 
 customerSchema.loadClass(Customer);

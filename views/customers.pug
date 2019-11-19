@@ -15,6 +15,7 @@ block content
       th Country
       th Area Code
       th Phone Number
+      th Options
     each customer in customers
       - var id = customer.customerid
       tr
@@ -28,6 +29,8 @@ block content
         td #{customer.country}
         td #{customer.areacode}
         td #{customer.phonenumber}
+        td
+          span(title='Edit'): a(href=`/customer/edit/${id}`) ✏
 
   script.
     $(document).ready( function () {

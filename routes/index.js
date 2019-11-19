@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
 .get('/customer', customerController.index)
 .get('/customer/edit/:id', customerController.renderEditForm)
 .get('/customer/new', function(req,res,next) {res.render('customer-form', {newCustomer: true})})
-.get('/sales', transactionController.index);
+.get('/transactions', transactionController.index)
+.get('/transaction/new', transactionController.renderForm);
 
 module.exports = router;
  

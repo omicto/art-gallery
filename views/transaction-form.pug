@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  h1 Register a transaction
+  form(id='transaction-form' class='form-group')
+    label Select Customer
+    select(name="customerid" class="form-control")
+      each customer in customers
+        option(value=customer.customerid) #{customer.firstname} #{customer.lastname}
+    label Select an artist
+    select(name="artist" class='form-control artist-select')
+      each artist in artists
+        option(value=artist.artistid) #{artist.fullName}
+    each artist in artists
+      div(id=artist.artistid class="work-info" style="display: none")
+        label Select a work
+        select(name="workid" class='form-control work-select' disabled)
+          each work in artist.works
+            option(value=work.workid) #{work.title}
+    label Date Acquired
+    input(type="text" name="dateacquired" class="form-control")
+    label Acquisition Price
+    input(type="number" name="acquisitionprice" class="form-control")
+    label Asking Price
+    input(type="number" name="askingprice" class="form-control")
+    label Date Sold
+    input(type="text" name="datesold" class="form-control")
+    label Sales Price
+    input(type="number" name="salesprice" class="form-control")
+    button(type="submit") Submit
+
+
+  script.
+    $(".artist-select").change(function(e) {
+      disableSelects();
+      enableSelect(this.value);
+    });
+
+    function enableSelect(num){
+        $('#'+num).show();
+        $('#'+num+'> select').prop('disabled', false)
+    }
+
+    function disableSelects(){
+      $(".work-info").hide();
+      $(".work-select").prop('disabled', true);
+    }
+    //todo add form on submit

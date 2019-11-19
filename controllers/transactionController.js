@@ -1,14 +1,25 @@
 const Transaction = require('../models/transaction');
+const Customer = require('../models/customer');
 const Artist = require('../models/artist');
 
 
 function index(req, res, next) {
     Transaction.find().then(transactions => {
-        
-        res.render('transactions', { title: 'Sales', transactions: transactions });
+        res.render('transactions', { title: 'Transactions', transactions: transactions });
     });
 }
 
+function renderForm(req, res, next){
+    Customer.find().then((customers) => {
+        Artist.find().then((artists) => {
+           res.render('transaction-form', {
+               customers: customers,
+               artists: artists,
+               title: 'Add a new transaction'
+           }); 
+        });
+    });
+}
 
 function create(req, res, next) {
     let transaction = new Transaction({
@@ -33,4 +44,4 @@ function destroy(req, res, next) {
     Transaction.remove({ transactionid: transactionid }).then((t) => res.json(t));
 }
 
-module.exports = { index, create, destroy }
+module.exports = { index, create, destroy, renderForm }
