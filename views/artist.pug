@@ -2,6 +2,7 @@ extends layout
 
 block content
   h1=artist.fullName + ' | Works'
+  h3: a(href='/artist/' + artist.artistid + '/addwork') + Add Work
   ul
     each work in artist.works
       li 

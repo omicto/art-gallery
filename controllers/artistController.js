@@ -17,6 +17,11 @@ function renderForm(req, res, next){
     Artist.findOne({ artistid: artistId }).then(a => res.render('artist-form', { newArtist: false, artist: a }));
 }
 
+function renderWorkForm(req, res, next){
+    let artistId = req.params.id;
+    Artist.findOne({ artistid: artistId }).then(a => res.render('work-form', {artist: a }));
+}
+
 function destroy(req, res, next) {
     let artistid = req.params.id;
     Artist.remove({ artistid: artistid }).then((actor) => res.json(actor));
@@ -53,7 +58,8 @@ function addWork(req, res, next) {
             copy: req.body.copy,
             medium: req.body.medium,
             description: req.body.description
-        }).then((artist) => res.json(artist));
+        });
+        artist.save().then(artist => res.json(artist));
     });
 }
 
@@ -66,5 +72,5 @@ function getWork(req, res, next){
 }
 
 module.exports = {
-    index, one, destroy, create, update, addWork, getWork, renderForm
+    index, one, destroy, create, update, addWork, getWork, renderForm, renderWorkForm
 };

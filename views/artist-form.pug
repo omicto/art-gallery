@@ -16,7 +16,7 @@ block content
     input(type="number" name="datedeceased" value=artistInfo.datedeceased class="form-control")
     button(type="submit") Submit
 
-  - let url = '/api/artist/' + (newArtist ?  '' : artistInfo.artist);
+  - let url = '/api/artist/' + (newArtist ?  '' : artistInfo.artistid);
   - let type = newArtist? 'post' : 'put';
   script.
     $('#artist-form').on('submit', function(e){

@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 Add a work from #{artist.firstname} #{artist.lastname}
+  form(id='work-form' class='form-group')
+    label Title
+    input(type='text' name='title' class='form-control')
+    label Copy
+    input(type='text' name='copy' class='form-control')
+    label Medium
+    input(type='text' name='medium' class='form-control')
+    label Description
+    input(type='text' name='description' class='form-control')
+    button(type="submit") Submit
+
+  - let url = '/api/artist/' + artist.artistid + '/addwork';
+  script.
+    $('#work-form').on('submit', function(e){
+      e.preventDefault();
+      let form = $(this);
+
+      $.ajax({
+        type: 'post',
+        url: '#{url}',
+        data: form.serialize()
+      });
+    });
