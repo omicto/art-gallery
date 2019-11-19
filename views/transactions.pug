@@ -24,11 +24,19 @@ block content
         td #{trans.customerid}
         td #{trans.workid}
         td
-          span(title='Edit' onclick=`edit(${id})`): a(href='#') ✏
-          span(title='Delete' onclick=`deleteArtist(${id})`): a(href='#') ❌ 
+          span(title='Delete' onclick=`deleteTransaction(${id})`): a(href='#') ❌ 
   
   script.
     $(document).ready( function () {
       $('#table').DataTable();
     });
+
+    function deleteTransaction(id){
+      $.ajax({
+        url: "/api/transaction/" + id,
+        method: 'DELETE'
+      }).fail(function () {
+        $('body').prepend('Eliminado');
+      });
+    }
 

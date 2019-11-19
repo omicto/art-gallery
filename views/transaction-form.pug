@@ -45,4 +45,14 @@ block content
       $(".work-info").hide();
       $(".work-select").prop('disabled', true);
     }
-    //todo add form on submit
+
+    $('#transaction-form').on('submit', function(e){
+      e.preventDefault();
+      let form = $(this);
+
+      $.ajax({
+        type: 'post',
+        url: '/api/transaction',
+        data: form.serialize()
+      });
+    });
